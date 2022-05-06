@@ -1,1 +1,69 @@
+.app {
+  width: 100%;
+}
 
+.header {
+  width: 100%;
+  background-color: white;
+  margin-bottom: 2rem;
+}
+
+.white {
+  /* background-color: white; */
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.438rem 0 1.688rem 0;
+}
+
+.nav-links {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-title {
+  font-size: 1.875rem;
+  padding-right: 1.5rem;
+  color: rgb(22, 183, 236);
+  font-weight: 800;
+}
+
+.nav-link {
+  padding-right: 1.5rem;
+  font-size: 0.813rem;
+  opacity: 50%;
+  color: initial;
+}
+
+.nav-link:active {
+  color: black;
+}
+
+.main {
+  width: 100%;
+  /* background-color: grey; */
+}
+
+.books {
+  /* background-color: transparent; */
+}
+
+.book {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+}
+
+.interactions {
+  display: inline-flex;
+}
+
+.extraBookInfo {
+  display: flex;
+  align-items: center;
+}
