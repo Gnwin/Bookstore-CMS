@@ -8,10 +8,6 @@
   margin-bottom: 2rem;
 }
 
-.white {
-  /* background-color: white; */
-}
-
 .nav {
   display: flex;
   justify-content: space-between;
@@ -44,11 +40,6 @@
 
 .main {
   width: 100%;
-  /* background-color: grey; */
-}
-
-.books {
-  /* background-color: transparent; */
 }
 
 .book {
@@ -57,13 +48,144 @@
   justify-content: space-between;
   margin-bottom: 1rem;
   padding: 1.5rem;
+  border: 1px solid rgb(223, 221, 221);
+}
+
+.category {
+  font-size: var(--font-size);
+  margin-bottom: 0.3rem;
+  color: rgb(80, 80, 80);
+}
+
+.name-author {
+  margin-bottom: 0.8rem;
+}
+
+.title {
+  font-size: 1.375rem;
+  letter-spacing: -0.2px;
+  font-weight: bold;
+}
+
+.author {
+  font-size: var(--font-size);
+  color: rgb(103, 103, 134);
 }
 
 .interactions {
   display: inline-flex;
+  font-size: var(--font-size);
+  color: rgb(103, 103, 134);
 }
 
 .extraBookInfo {
   display: flex;
   align-items: center;
+}
+
+.comments {
+  padding-right: 0.5rem;
+  border-right: 1px solid #000;
+}
+
+.remove {
+  border-right: 1px solid #000;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.edit {
+  padding-left: 0.5rem;
+}
+
+.completion {
+  display: flex;
+  align-items: center;
+  padding-right: 3rem;
+  border-right: 1px solid rgb(223, 221, 221);;
+}
+
+.completed {
+  font-size: 0.875rem;
+  padding-left: 1rem;
+  color: rgb(130, 130, 130);
+}
+
+.completionvalue {
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.chapters {
+  padding: 0 2.2rem;
+  margin-right: 3rem;
+}
+
+.current-chapter {
+  font-size: 0.813rem;
+  margin-bottom: 0.5rem;
+  color: rgb(162, 162, 162);
+}
+
+.chapter {
+  margin-bottom: 1rem;
+  letter-spacing: -0.4px;
+}
+
+.update-progress {
+  font-size: 0.813rem;
+  padding: 0.5rem 2rem;
+  background-color: rgb(22, 183, 236);
+  color: white;
+  border-radius: 3px;
+}
+
+.inputtitle {
+  width: 55%;
+  margin-right: 3%;
+  padding: 0.5rem;
+}
+
+.select {
+  width: 20%;
+  margin-right: 3%;
+  padding: 0.5rem;
+}
+
+.button {
+  width: 19%;
+  font-size: 0.813rem;
+  background-color: rgb(22, 183, 236);
+  color: white;
+  padding: 0.6rem 0;
+}
+
+.forminput {
+  display: flex;
+}
+
+.forminput > * {
+  border-radius: 3px;
+}
+
+.addnewheader {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.form {
+  padding-top: 2rem;
+}
+
+.bookss {
+  border-bottom: 1px solid #000;
+  padding-bottom: 1rem;
+}
+
+
+.catbutton {
+  background-color: grey;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
 }

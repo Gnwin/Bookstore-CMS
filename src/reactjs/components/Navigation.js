@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Avatar from '@mui/material/Avatar';
 
 const Navigation = () => {
   const [navContent] = useState({
     logo: 'Bookstore CMS',
     links: ['BOOKS', 'CATEGORIES'],
-    avatar: 'AVATAR',
+    avatarInfo: {
+      user: 'Godwin',
+      imagelink: '',
+    },
   });
 
   return (
@@ -16,7 +20,11 @@ const Navigation = () => {
           <Link to={`/${link.toLowerCase()}`} key={link} className="nav-link" data-testid={`nav-${index + 1}`}>{link}</Link>
         ))}
       </div>
-      <div>{navContent.avatar}</div>
+      <Avatar
+        alt={navContent.avatarInfo.user}
+        src={navContent.imagelink}
+        sx={{ width: 28, height: 28 }}
+      />
     </div>
   );
 };

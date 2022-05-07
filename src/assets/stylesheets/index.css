@@ -6,7 +6,7 @@
 .body {
   position: relative;
   font-family: "Montserrat";
-  background-color: grey;
+  background-color: rgb(240, 240, 240);
 }
 
 .offscreen {
@@ -24,6 +24,10 @@
   width: 85.7%;
   max-width: 88.1485714rem;
   margin: auto;
+}
+
+:root {
+  --font-size: 0.875rem;
 }
 
 /* @font-face {

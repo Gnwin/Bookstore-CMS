@@ -1,11 +1,15 @@
 import React from 'react';
 import Book from './Book';
+import AddNewBookForm from './AddNewBookForm';
 
 const Books = () => (
   <div className="books appwidth" data-testid="books-a">
-    <Book />
-    <Book />
-    <Book />
+    <div className="bookss">
+      <Book />
+      <Book />
+      <Book />
+    </div>
+    <AddNewBookForm />
   </div>
 );
 
