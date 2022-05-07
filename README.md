@@ -4,9 +4,7 @@ An app that displays a list of books with a remove button
 
 ## Screenshots
 
-<!-- <img src="./src/assets/images/Screenshot 2022-05-03 at 2.01.01 PM.png"> -->
-<!-- <img src="./src/assets/images/Screenshot 2022-05-03 at 2.01.25 PM.png"> -->
-- Coming soon!
+<img src="./src/assets/images/Screenshot 2022-05-07 at 8.02.01 PM.png">
 
 ## Live preview
 
