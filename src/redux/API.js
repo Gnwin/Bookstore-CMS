@@ -25,3 +25,5 @@ export const books = [
     completion: 85,
   },
 ];
+
+export const categories = [];

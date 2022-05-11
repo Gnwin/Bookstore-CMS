@@ -1,46 +1,47 @@
 /* eslint-disable */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import { handleAddBook } from '../../redux/actions/books';
-// import { handleAddCategory } from '../../redux/actions/categories';
 import { generateId } from '../../redux/API';
-
 
 const AddNewBookForm = (props) => {
   const [bookdetails, setBookDetails] = useState({
     name: '',
     category: '',
+    author: 'unknown',
+    completion: 0,
   });
 
-  let genres = ['Action', 'Science fiction', 'Economy'];
+  const genres = ['Action', 'Science fiction', 'Economy'];
 
   const updateNameAndCategory = (value) => {
     if (genres.includes(value)) {
-      setBookDetails(() => ({
+      setBookDetails((oldState) => ({
+        name: oldState.name,
         category: value,
+        author: 'unknown',
+        completion: 0,
       }));
     } else {
-      setBookDetails(() => ({
+      setBookDetails((oldState) => ({
         name: value,
+        category: oldState.category,
+        author: 'unknown',
+        completion: 0,
       }));
     }
-    console.log(bookdetails)
   };
-
-  // const updateCategory = (category) => {
-  //   setBookDetails(() => ({
-  //     category,
-  //   }));
-  // };
 
   const addItem = (e) => {
     e.preventDefault();
     const book = {
       id: generateId(),
-      name: bookdetails.name,
+      title: bookdetails.name,
       category: bookdetails.category,
+      author: bookdetails.author,
+      completion: bookdetails.completion,
     };
-    console.log(book)
     props.dispatch(handleAddBook(book));
   };
 
@@ -75,5 +76,9 @@ const AddNewBookForm = (props) => {
 };
 
 export default AddNewBookForm;
+
+AddNewBookForm.propTypes = {
+  dispatch: PropTypes.instanceOf(Function).isRequired,
+};
 
 /* eslint-enable */

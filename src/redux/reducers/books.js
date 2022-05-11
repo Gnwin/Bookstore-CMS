@@ -1,5 +1,4 @@
 /* eslint-disable */
-// books.js
 import { ADD_BOOK, REMOVE_BOOK, TOGGLE_BOOK } from '../actions/books';
 import { RECEIVE_DATA } from '../actions/shared';
 

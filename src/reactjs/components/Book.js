@@ -1,10 +1,7 @@
-/* eslint-disable */
 import React from 'react';
-import CircularProgress from '@mui/material/CircularProgress';
+import PropTypes from 'prop-types';
 
-// import handleDeleteBook from '../../redux/actions/books';
-// import handleToggleBook from '../../redux/actions/books';
-// import { handleCheckStatus } from '../../redux/actions/categories';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Book = (props) => {
   const { book } = props;
@@ -46,4 +43,6 @@ const Book = (props) => {
 
 export default Book;
 
-/* eslint-enable */
+Book.propTypes = {
+  book: PropTypes.instanceOf(Object).isRequired,
+};

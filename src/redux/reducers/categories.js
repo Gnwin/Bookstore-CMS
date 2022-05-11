@@ -1,4 +1,3 @@
-// todos.js
 import { CHECK_STATUS } from '../actions/categories';
 import { RECEIVE_DATA } from '../actions/shared';
 

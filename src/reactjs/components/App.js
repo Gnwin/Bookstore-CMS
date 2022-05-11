@@ -1,7 +1,7 @@
-/* eslint-disable */
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import '../../assets/stylesheets/App.css';
 import Navigation from './Navigation';
@@ -16,7 +16,7 @@ const App = (props) => {
     dispatch(handleInitialData());
   }, []);
 
-  const { books, loading } = props;
+  const { loading } = props;
 
   if (loading === true) {
     return <h3>Loading...</h3>;
@@ -44,4 +44,7 @@ export default connect((store) => ({
   loading: store.loading,
 }))(App);
 
-/* eslint-enable */
+App.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+};
