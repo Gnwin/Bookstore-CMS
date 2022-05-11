@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+/* eslint-disable */
+import React from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 
-const Book = () => {
-  const [bookItem] = useState({
-    category: 'Action',
-    title: 'The Hunger games',
-    author: 'Suzanne Collins',
-    completion: '75%',
-  });
+// import handleDeleteBook from '../../redux/actions/books';
+// import handleToggleBook from '../../redux/actions/books';
+// import { handleCheckStatus } from '../../redux/actions/categories';
+
+const Book = (props) => {
+  const { book } = props;
 
   return (
     <div className="book">
       <div className="bookinfo">
-        <div className="category">{bookItem.category}</div>
+        <div className="category">{book.category}</div>
         <div className="name-author">
-          <div className="title">{bookItem.title}</div>
-          <div className="author">{bookItem.author}</div>
+          <div className="title">{book.title}</div>
+          <div className="author">{book.author}</div>
         </div>
         <div className="interactions">
           <p className="comments">Comments</p>
@@ -25,9 +25,12 @@ const Book = () => {
       </div>
       <div className="extraBookInfo">
         <div className="completion">
-          <CircularProgress variant="determinate" value={75} color="info" size={55} />
+          <CircularProgress variant="determinate" value={book.completion} color="info" size={55} />
           <div className="completed">
-            <div className="completionvalue">{bookItem.completion}</div>
+            <div className="completionvalue">
+              {book.completion}
+              %
+            </div>
             Completed
           </div>
         </div>
@@ -42,3 +45,5 @@ const Book = () => {
 };
 
 export default Book;
+
+/* eslint-enable */
