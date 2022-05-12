@@ -23,6 +23,7 @@ An app that displays a list of books with a remove button
 - JavaScript(ES6)
 - React
 - Webpack
+- Redux
 - jest
 
 ## Getting Started
