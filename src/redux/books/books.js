@@ -2,8 +2,8 @@ import RECEIVE_DATA from '../shared/actions';
 
 // actions
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
-const REMOVE_BOOK = 'bookstore/books/ADD_BOOK';
-const TOGGLE_BOOK = 'bookstore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
+const TOGGLE_BOOK = 'bookstore/books/TOGGLE_BOOK';
 
 // reducer
 export default function books(state = [], action) {

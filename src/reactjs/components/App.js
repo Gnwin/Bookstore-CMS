@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
 
 import '../../assets/stylesheets/App.css';
 import Navigation from './Navigation';
@@ -9,14 +8,14 @@ import ConnectedBooks from './Books';
 import ConnectedCategories from './Categories';
 import handleInitialData from '../../redux/shared/receivedata';
 
-const App = (props) => {
+const App = () => {
+  const state = useSelector((state) => state);
+  const dispatch = useDispatch();
   useEffect(() => {
-    const { dispatch } = props;
     dispatch(handleInitialData());
   }, []);
 
-  const { loading } = props;
-
+  const { loading } = state;
   if (loading === true) {
     return <h3>Loading...</h3>;
   }
@@ -34,16 +33,8 @@ const App = (props) => {
           <Route path="categories" element={<ConnectedCategories />} />
         </Routes>
       </div>
-
     </div>
   );
 };
 
-export default connect((store) => ({
-  loading: store.loading,
-}))(App);
-
-App.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  loading: PropTypes.bool.isRequired,
-};
+export default App;
