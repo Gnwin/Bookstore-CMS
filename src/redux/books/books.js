@@ -9,7 +9,13 @@ const TOGGLE_BOOK = 'bookstore/books/TOGGLE_BOOK';
 export default function books(state = [], action) {
   switch (action.type) {
     case ADD_BOOK:
-      return state.concat([action.book]);
+      return [...state, {
+        id: action.book.id,
+        title: action.book.title,
+        category: action.book.category,
+        author: action.book.author,
+        completion: action.book.completion,
+      }];
     case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.id);
     case TOGGLE_BOOK:
@@ -64,3 +70,9 @@ export function handleToggleBook(id) {
     dispatch(toggleBook(id));
   };
 }
+
+// id: generateId(),
+// title: 'The Strangers',
+// category: 'Action',
+// author: 'Smith Bush',
+// completion: 50,

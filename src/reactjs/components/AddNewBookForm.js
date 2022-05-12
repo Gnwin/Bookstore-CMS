@@ -43,6 +43,12 @@ const AddNewBookForm = () => {
       author: bookdetails.author,
       completion: bookdetails.completion,
     };
+    setBookDetails(() => ({
+      name: '',
+      category: '',
+      author: 'unknown',
+      completion: 0,
+    }));
     dispatch(handleAddBook(book));
   };
 
@@ -77,7 +83,3 @@ const AddNewBookForm = () => {
 };
 
 export default AddNewBookForm;
-
-AddNewBookForm.propTypes = {
-  // dispatch: PropTypes.instanceOf(Function).isRequired,
-};

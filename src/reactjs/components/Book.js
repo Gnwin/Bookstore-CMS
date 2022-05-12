@@ -12,7 +12,6 @@ const Book = (props) => {
 
   const removeItem = ((e) => {
     e.preventDefault();
-    console.log(book);
     dispatch(handleDeleteBook(book));
   });
 

@@ -6,7 +6,6 @@ import AddNewBookForm from './AddNewBookForm';
 
 const Books = () => {
   const books = useSelector((state) => state.books);
-  console.log(books);
   return (
     <div className="books appwidth" data-testid="books-a">
       <div className="bookss">
