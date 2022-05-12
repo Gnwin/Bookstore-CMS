@@ -7,12 +7,11 @@ import '../../assets/stylesheets/App.css';
 import Navigation from './Navigation';
 import ConnectedBooks from './Books';
 import ConnectedCategories from './Categories';
-import { handleInitialData } from '../../redux/actions/shared';
+import { handleInitialData } from '../../redux/shared/receivedata';
 
 const App = (props) => {
   useEffect(() => {
     const { dispatch } = props;
-
     dispatch(handleInitialData());
   }, []);
 

@@ -1,9 +1,8 @@
-/* eslint-disable */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { handleAddBook } from '../../redux/actions/books';
-import { generateId } from '../../redux/API';
+import { handleAddBook } from '../../redux/books/books';
+import { generateId } from '../../redux/shared/API';
 
 const AddNewBookForm = (props) => {
   const [bookdetails, setBookDetails] = useState({
@@ -14,6 +13,7 @@ const AddNewBookForm = (props) => {
   });
 
   const genres = ['Action', 'Science fiction', 'Economy'];
+  const { dispatch } = props;
 
   const updateNameAndCategory = (value) => {
     if (genres.includes(value)) {
@@ -42,7 +42,7 @@ const AddNewBookForm = (props) => {
       author: bookdetails.author,
       completion: bookdetails.completion,
     };
-    props.dispatch(handleAddBook(book));
+    dispatch(handleAddBook(book));
   };
 
   return (
@@ -80,5 +80,3 @@ export default AddNewBookForm;
 AddNewBookForm.propTypes = {
   dispatch: PropTypes.instanceOf(Function).isRequired,
 };
-
-/* eslint-enable */

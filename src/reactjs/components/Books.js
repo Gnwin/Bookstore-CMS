@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -7,7 +6,7 @@ import Book from './Book';
 import AddNewBookForm from './AddNewBookForm';
 
 const Books = (props) => {
-  const { books } = props;
+  const { books, dispatch } = props;
   return (
     <div className="books appwidth" data-testid="books-a">
       <div className="bookss">
@@ -15,7 +14,7 @@ const Books = (props) => {
           <Book key={book.id} book={book} />
         ))}
       </div>
-      <AddNewBookForm dispatch={props.dispatch} />
+      <AddNewBookForm dispatch={dispatch} />
     </div>
   );
 };
@@ -28,5 +27,3 @@ Books.propTypes = {
   books: PropTypes.instanceOf(Object).isRequired,
   dispatch: PropTypes.instanceOf(Function).isRequired,
 };
-
-/* eslint-enable */

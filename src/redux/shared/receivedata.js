@@ -1,10 +1,8 @@
-import { books, categories } from '../API';
-
-// constants
-export const RECEIVE_DATA = 'RECEIVE_DATA';
+import { books, categories } from './API';
+import { RECEIVE_DATA } from './actions';
 
 // action creators
-function receiveData(books) {
+function receiveData(books, categories) {
   return {
     type: RECEIVE_DATA,
     books,
