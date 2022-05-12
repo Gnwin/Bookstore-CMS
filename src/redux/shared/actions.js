@@ -1,2 +1,4 @@
 // shared action
-export const RECEIVE_DATA = 'bookstore/shared/RECEIVE_DATA';
+const RECEIVE_DATA = 'bookstore/shared/RECEIVE_DATA';
+
+export default RECEIVE_DATA;

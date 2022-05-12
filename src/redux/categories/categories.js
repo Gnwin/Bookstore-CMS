@@ -1,4 +1,4 @@
-import { RECEIVE_DATA } from '../shared/actions';
+import RECEIVE_DATA from '../shared/actions';
 
 // actions
 const CHECK_STATUS = 'bookstore/categories/CHECK_STATUS';

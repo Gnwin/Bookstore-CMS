@@ -1,5 +1,5 @@
 import { books, categories } from './API';
-import { RECEIVE_DATA } from './actions';
+import RECEIVE_DATA from './actions';
 
 // action creators
 function receiveData(books, categories) {
@@ -11,8 +11,10 @@ function receiveData(books, categories) {
 }
 
 // Thunk action creators
-export function handleInitialData() {
+function handleInitialData() {
   return (dispatch) => {
     dispatch(receiveData(books, categories));
   };
 }
+
+export default handleInitialData;

@@ -1,4 +1,4 @@
-import { RECEIVE_DATA } from './actions';
+import RECEIVE_DATA from './actions';
 
 // reducer
 export default function loading(state = true, action) {
