@@ -30,7 +30,7 @@ An app that displays a list of books with a remove button
 To get a local copy up and running follow this simple step:
 
 - Clone repository to your local machine: `www.github.com/gnwin/bookstore-cms.git`
-- Run `git checkout feature/components`
+- Run `git checkout feature/reducers-actions`
 - Run `npm install` to install dependencies
 - Run `npm start` to start the server
 
