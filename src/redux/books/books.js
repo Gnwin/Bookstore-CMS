@@ -70,9 +70,3 @@ export function handleToggleBook(id) {
     dispatch(toggleBook(id));
   };
 }
-
-// id: generateId(),
-// title: 'The Strangers',
-// category: 'Action',
-// author: 'Smith Bush',
-// completion: 50,
