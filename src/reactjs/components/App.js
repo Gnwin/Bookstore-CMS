@@ -29,7 +29,6 @@ const App = () => {
       <div className="main">
         <Routes>
           <Route exact path="/" element={<ConnectedBooks />} />
-          <Route path="books" element={<ConnectedBooks />} />
           <Route path="categories" element={<ConnectedCategories />} />
         </Routes>
       </div>

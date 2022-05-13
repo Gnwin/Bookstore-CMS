@@ -17,7 +17,14 @@ const Navigation = () => {
       <div className="nav-links">
         <div className="nav-title">{navContent.logo}</div>
         {navContent.links.map((link, index) => (
-          <Link to={`/${link.toLowerCase()}`} key={link} className="nav-link" data-testid={`nav-${index + 1}`}>{link}</Link>
+          <Link
+            key={link}
+            to={link === 'BOOKS' ? '/' : `/${link.toLowerCase()}`}
+            className="nav-link"
+            data-testid={`nav-${index + 1}`}
+          >
+            {link}
+          </Link>
         ))}
       </div>
       <Avatar
