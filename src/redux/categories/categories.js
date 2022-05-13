@@ -16,16 +16,15 @@ export default function categories(state = [], action) {
 }
 
 // categories action creators
-function checkStatus(id) {
+function checkStatus() {
   return {
     type: CHECK_STATUS,
-    id,
   };
 }
 
 // Thunk action creators
-export function handleCheckStatus(id) {
+export function handleCheckStatus() {
   return (dispatch) => {
-    dispatch(checkStatus(id));
+    dispatch(checkStatus());
   };
 }

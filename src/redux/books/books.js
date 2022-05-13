@@ -2,14 +2,20 @@ import RECEIVE_DATA from '../shared/actions';
 
 // actions
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
-const REMOVE_BOOK = 'bookstore/books/ADD_BOOK';
-const TOGGLE_BOOK = 'bookstore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
+const TOGGLE_BOOK = 'bookstore/books/TOGGLE_BOOK';
 
 // reducer
 export default function books(state = [], action) {
   switch (action.type) {
     case ADD_BOOK:
-      return state.concat([action.book]);
+      return [...state, {
+        id: action.book.id,
+        title: action.book.title,
+        category: action.book.category,
+        author: action.book.author,
+        completion: action.book.completion,
+      }];
     case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.id);
     case TOGGLE_BOOK:

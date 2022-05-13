@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 
 import { handleAddBook } from '../../redux/books/books';
 import { generateId } from '../../redux/shared/API';
 
-const AddNewBookForm = (props) => {
+const AddNewBookForm = () => {
   const [bookdetails, setBookDetails] = useState({
     name: '',
     category: '',
@@ -12,8 +12,9 @@ const AddNewBookForm = (props) => {
     completion: 0,
   });
 
+  const dispatch = useDispatch();
+
   const genres = ['Action', 'Science fiction', 'Economy'];
-  const { dispatch } = props;
 
   const updateNameAndCategory = (value) => {
     if (genres.includes(value)) {
@@ -42,6 +43,12 @@ const AddNewBookForm = (props) => {
       author: bookdetails.author,
       completion: bookdetails.completion,
     };
+    setBookDetails(() => ({
+      name: '',
+      category: '',
+      author: 'unknown',
+      completion: 0,
+    }));
     dispatch(handleAddBook(book));
   };
 
@@ -76,7 +83,3 @@ const AddNewBookForm = (props) => {
 };
 
 export default AddNewBookForm;
-
-AddNewBookForm.propTypes = {
-  dispatch: PropTypes.instanceOf(Function).isRequired,
-};

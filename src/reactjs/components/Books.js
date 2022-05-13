@@ -1,12 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
 import Book from './Book';
 import AddNewBookForm from './AddNewBookForm';
 
-const Books = (props) => {
-  const { books, dispatch } = props;
+const Books = () => {
+  const books = useSelector((state) => state.books);
   return (
     <div className="books appwidth" data-testid="books-a">
       <div className="bookss">
@@ -14,16 +13,9 @@ const Books = (props) => {
           <Book key={book.id} book={book} />
         ))}
       </div>
-      <AddNewBookForm dispatch={dispatch} />
+      <AddNewBookForm />
     </div>
   );
 };
 
-export default connect((state) => ({
-  books: state.books,
-}))(Books);
-
-Books.propTypes = {
-  books: PropTypes.instanceOf(Object).isRequired,
-  dispatch: PropTypes.instanceOf(Function).isRequired,
-};
+export default Books;

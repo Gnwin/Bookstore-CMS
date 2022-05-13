@@ -92,6 +92,8 @@
   border-right: 1px solid #000;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  background-color: transparent;
+  color: rgb(103, 103, 134);
 }
 
 .edit {
@@ -175,6 +177,7 @@
 
 .form {
   padding-top: 2rem;
+  padding-bottom: 10rem;
 }
 
 .bookss {
@@ -187,4 +190,15 @@
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 3px;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.status-text {
+  font-size: 2rem;
 }

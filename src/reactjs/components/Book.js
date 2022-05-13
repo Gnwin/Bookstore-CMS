@@ -1,10 +1,19 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import CircularProgress from '@mui/material/CircularProgress';
 
+import { handleDeleteBook } from '../../redux/books/books';
+
 const Book = (props) => {
   const { book } = props;
+  const dispatch = useDispatch();
+
+  const removeItem = ((e) => {
+    e.preventDefault();
+    dispatch(handleDeleteBook(book));
+  });
 
   return (
     <div className="book">
@@ -16,7 +25,7 @@ const Book = (props) => {
         </div>
         <div className="interactions">
           <p className="comments">Comments</p>
-          <p className="remove">Remove</p>
+          <button className="remove" type="button" onClick={removeItem}>Remove</button>
           <p className="edit">Edit</p>
         </div>
       </div>
