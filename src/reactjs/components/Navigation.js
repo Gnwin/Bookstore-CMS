@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 
+import '../../assets/stylesheets/Nav.css';
+
 const Navigation = () => {
   const [navContent] = useState({
     logo: 'Bookstore CMS',
