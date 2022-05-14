@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import CircularProgress from '@mui/material/CircularProgress';
@@ -9,10 +9,11 @@ import { handleDeleteBook } from '../../redux/books/books';
 const Book = (props) => {
   const { book } = props;
   const dispatch = useDispatch();
+  const id = useSelector((state) => state.id);
 
   const removeItem = ((e) => {
     e.preventDefault();
-    dispatch(handleDeleteBook(book));
+    dispatch(handleDeleteBook(id, book));
   });
 
   return (

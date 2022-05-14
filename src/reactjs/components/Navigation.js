@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 
+import '../../assets/stylesheets/Nav.css';
+
 const Navigation = () => {
   const [navContent] = useState({
     logo: 'Bookstore CMS',
@@ -17,7 +19,14 @@ const Navigation = () => {
       <div className="nav-links">
         <div className="nav-title">{navContent.logo}</div>
         {navContent.links.map((link, index) => (
-          <Link to={`/${link.toLowerCase()}`} key={link} className="nav-link" data-testid={`nav-${index + 1}`}>{link}</Link>
+          <Link
+            key={link}
+            to={link === 'BOOKS' ? '/' : `/${link.toLowerCase()}`}
+            className="nav-link"
+            data-testid={`nav-${index + 1}`}
+          >
+            {link}
+          </Link>
         ))}
       </div>
       <Avatar

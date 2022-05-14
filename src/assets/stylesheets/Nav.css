@@ -1,0 +1,29 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.438rem 0 1.688rem 0;
+}
+
+.nav-links {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-title {
+  font-size: 1.875rem;
+  padding-right: 1.5rem;
+  color: rgb(22, 183, 236);
+  font-weight: 800;
+}
+
+.nav-link {
+  padding-right: 1.5rem;
+  font-size: 0.813rem;
+  opacity: 50%;
+  color: initial;
+}
+
+.nav-link:hover {
+  color: black;
+}
