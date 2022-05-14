@@ -1,4 +1,3 @@
-/* eslint-disable */
 import RECEIVE_DATA from '../shared/actions';
 import showConnectionError from '../shared/error';
 import { createBook, deleteBook } from '../shared/API';
@@ -63,7 +62,7 @@ export function handleAddBook(appid, bookobj) {
     return createBook(appid, bookobj)
       .catch(() => {
         showConnectionError();
-        dispatch(removeBook(bookobj.id))
+        dispatch(removeBook(bookobj.id));
       });
   };
 }
@@ -76,7 +75,7 @@ export function handleDeleteBook(appid, book) {
       .catch(() => {
         showConnectionError();
         dispatch(addBook(book));
-    });
+      });
   };
 }
 
@@ -85,4 +84,3 @@ export function handleToggleBook(id) {
     dispatch(toggleBook(id));
   };
 }
-/* eslint-enable */

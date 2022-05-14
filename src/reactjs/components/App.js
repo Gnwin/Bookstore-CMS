@@ -1,14 +1,13 @@
-/* eslint-disable */
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import '../../assets/stylesheets/App.css';
+import CircularProgress from '@mui/material/CircularProgress';
 import Navigation from './Navigation';
 import ConnectedBooks from './Books';
 import ConnectedCategories from './Categories';
-import { handleInitialData } from '../../redux/shared/receivedata';
-import CircularProgress from '@mui/material/CircularProgress';
+import handleInitialData from '../../redux/shared/receivedata';
 
 const App = () => {
   const state = useSelector((state) => state);

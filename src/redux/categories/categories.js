@@ -1,6 +1,4 @@
-/* eslint-disable */
 import RECEIVE_DATA from '../shared/actions';
-import showConnectionError from '../shared/error';
 
 // actions
 const CHECK_STATUS = 'bookstore/categories/CHECK_STATUS';
@@ -30,5 +28,3 @@ export function handleCheckStatus() {
     dispatch(checkStatus());
   };
 }
-
-/* eslint-enable */
