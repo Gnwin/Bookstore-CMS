@@ -1,11 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 
+import { id } from './shared/reducers';
 import books from './books/books';
 import categories from './categories/categories';
 import loading from './shared/loading';
+import middleware from './middleware';
 
 const rootReducer = combineReducers({
+  id,
   books,
   categories,
   loading,
@@ -13,6 +16,7 @@ const rootReducer = combineReducers({
 
 const store = configureStore({
   reducer: rootReducer,
+  middleware,
 });
 
 export default store;

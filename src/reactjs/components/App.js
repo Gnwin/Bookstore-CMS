@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -6,14 +7,33 @@ import '../../assets/stylesheets/App.css';
 import Navigation from './Navigation';
 import ConnectedBooks from './Books';
 import ConnectedCategories from './Categories';
-import handleInitialData from '../../redux/shared/receivedata';
+import { createAppID } from '../../redux/shared/API';
+import { handleInitialData } from '../../redux/shared/receivedata';
 
 const App = () => {
+  // const [appid, setAppId] = useState('');
   const state = useSelector((state) => state);
+  // const appid = useSelector((state) => state.id);
+  console.log(state);
   const dispatch = useDispatch();
+  // createAppID();
+  // let appid;
   useEffect(() => {
+    // if (localStorage.getItem('bkstoreid') === null) {
+    // createAppID()
+      // .then((response) => {
+        // console.log(response);
+        // setAppId(response);
+      // });
+    // }
+    // else {
+    // appid = JSON.parse(localStorage.getItem(key));
+    // }
     dispatch(handleInitialData());
   }, []);
+
+  // const state = useSelector((state) => state);
+  //   console.log(state);
 
   const { loading } = state;
   if (loading === true) {
@@ -37,3 +57,5 @@ const App = () => {
 };
 
 export default App;
+
+/* eslint-enable */

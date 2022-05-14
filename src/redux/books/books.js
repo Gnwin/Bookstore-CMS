@@ -1,4 +1,7 @@
+/* eslint-disable */
 import RECEIVE_DATA from '../shared/actions';
+import showConnectionError from '../shared/error';
+import { createBook, deleteBook } from '../shared/API';
 
 // actions
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
@@ -53,15 +56,27 @@ function toggleBook(id) {
 }
 
 // Thunk action creators
-export function handleAddBook(book) {
+export function handleAddBook(appid, bookobj) {
   return (dispatch) => {
-    dispatch(addBook(book));
+    dispatch(addBook(bookobj));
+
+    return createBook(appid, bookobj)
+      .catch(() => {
+        showConnectionError();
+        dispatch(removeBook(bookobj.id))
+      });
   };
 }
 
-export function handleDeleteBook(book) {
+export function handleDeleteBook(appid, book) {
   return (dispatch) => {
     dispatch(removeBook(book.id));
+
+    return deleteBook(appid, book)
+      .catch(() => {
+        showConnectionError();
+        // dispatch(addBook(book));
+    });
   };
 }
 
@@ -70,3 +85,4 @@ export function handleToggleBook(id) {
     dispatch(toggleBook(id));
   };
 }
+/* eslint-enable */

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { handleAddBook } from '../../redux/books/books';
 import { generateId } from '../../redux/shared/API';
@@ -9,10 +9,11 @@ const AddNewBookForm = () => {
     name: '',
     category: '',
     author: 'unknown',
-    completion: 0,
+    completion: 10,
   });
 
   const dispatch = useDispatch();
+  const id = useSelector((state) => state.id);
 
   const genres = ['Action', 'Science fiction', 'Economy'];
 
@@ -22,14 +23,14 @@ const AddNewBookForm = () => {
         name: oldState.name,
         category: value,
         author: 'unknown',
-        completion: 0,
+        completion: oldState.completion,
       }));
     } else {
       setBookDetails((oldState) => ({
         name: value,
         category: oldState.category,
         author: 'unknown',
-        completion: 0,
+        completion: oldState.completion,
       }));
     }
   };
@@ -43,13 +44,14 @@ const AddNewBookForm = () => {
       author: bookdetails.author,
       completion: bookdetails.completion,
     };
+    console.log(book);
     setBookDetails(() => ({
       name: '',
       category: '',
       author: 'unknown',
       completion: 0,
     }));
-    dispatch(handleAddBook(book));
+    dispatch(handleAddBook(id, book));
   };
 
   return (
