@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 
-import { id } from './shared/reducers';
+import { id } from './shared/appid';
 import books from './books/books';
 import categories from './categories/categories';
 import loading from './shared/loading';

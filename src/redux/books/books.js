@@ -75,7 +75,7 @@ export function handleDeleteBook(appid, book) {
     return deleteBook(appid, book)
       .catch(() => {
         showConnectionError();
-        // dispatch(addBook(book));
+        dispatch(addBook(book));
     });
   };
 }

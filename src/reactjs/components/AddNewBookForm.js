@@ -44,7 +44,6 @@ const AddNewBookForm = () => {
       author: bookdetails.author,
       completion: bookdetails.completion,
     };
-    console.log(book);
     setBookDetails(() => ({
       name: '',
       category: '',

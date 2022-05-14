@@ -1,6 +1,7 @@
 /* eslint-disable */
 import RECEIVE_DATA from './actions';
 import { createAppID, getAllBooks } from './API';
+import showConnectionError from './error';
 
 // action creators
 function receiveData(id, books, categories) {
@@ -18,17 +19,16 @@ export function handleInitialData() {
     if (localStorage.getItem('bkstoreid') === null) {
       return createAppID()
       .then(id => {
-        console.log(id);
         dispatch(receiveData(id, [], []));
         localStorage.setItem('bkstoreid', JSON.stringify(id));
       })
-      .catch(err => console.log(err));
+      .catch(() => {
+        showConnectionError();
+      });
     } else {
       const appid = JSON.parse(localStorage.getItem('bkstoreid'));
-      console.log(appid);
       return getAllBooks(appid)
       .then(books => {
-        console.log(books);
         const bks = Object.entries(books).map((arr) => {
           return {
             id: arr[0],
@@ -38,10 +38,11 @@ export function handleInitialData() {
             completion: 10,
           }
         })
-        console.log(bks);
         dispatch(receiveData(appid, bks, []));
       })
-      .catch(err => console.log(err));
+      .catch(() => {
+        showConnectionError()
+      });
     }
   };
 }
