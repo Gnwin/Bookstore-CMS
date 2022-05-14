@@ -8,6 +8,7 @@ import Navigation from './Navigation';
 import ConnectedBooks from './Books';
 import ConnectedCategories from './Categories';
 import { handleInitialData } from '../../redux/shared/receivedata';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const App = () => {
   const state = useSelector((state) => state);
@@ -19,7 +20,11 @@ const App = () => {
 
   const { loading } = state;
   if (loading === true) {
-    return <h3>Loading...</h3>;
+    return (
+      <div className="loading">
+        <div className="loader"><CircularProgress /></div>
+      </div>
+    );
   }
 
   return (

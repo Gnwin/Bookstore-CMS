@@ -172,3 +172,19 @@
 .status-text {
   font-size: 2rem;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.empty {
+  padding: 2rem;
+}
+
+.empdiv {
+  font-size: 1.5rem;
+  text-align: center;
+}

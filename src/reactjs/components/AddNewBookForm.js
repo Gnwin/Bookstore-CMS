@@ -48,7 +48,7 @@ const AddNewBookForm = () => {
       name: '',
       category: '',
       author: 'unknown',
-      completion: 0,
+      completion: 10,
     }));
     dispatch(handleAddBook(id, book));
   };

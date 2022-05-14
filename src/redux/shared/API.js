@@ -28,9 +28,7 @@ export const deleteBook = (appid, book) => {
     method: 'DELETE',
     body: JSON.stringify({ item_id: book.id }),
   })
-    .then((response) => {
-      return response.data;
-    });
+    .then((response) => response.data);
 }
 
 export function generateId() {

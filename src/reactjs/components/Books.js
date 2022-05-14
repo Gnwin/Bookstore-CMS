@@ -9,6 +9,11 @@ const Books = () => {
   return (
     <div className="books appwidth" data-testid="books-a">
       <div className="bookss">
+        {books.length === 0 && (
+          <div className="empty">
+            <div className="empdiv">There are no books here. Add a new book.</div>
+          </div>
+        )}
         {books.map((book) => (
           <Book key={book.id} book={book} />
         ))}
